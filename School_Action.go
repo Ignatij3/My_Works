@@ -87,9 +87,10 @@ func main() {
 	
 	file, _ := os.Open("../Files/ActionData.json")
 	byteSlice, _ := ioutil.ReadAll(file)
+	fmt.Println("Valid:", json.Valid(byteSlice))
 	json.Unmarshal(byteSlice, &aData)
+	fmt.Println("Data:", aData)
 	
-	fmt.Println(aData)
 	teachers := commitActions(aData)
-	fmt.Println(teachers)
+	fmt.Println("teachers", teachers)
 }
